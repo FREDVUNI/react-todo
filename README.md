@@ -1,3 +1,8 @@
+# Full stack JavaScript todo application
+A Full stack node express react app with mongoDB that allows users to sign up, sign in and have their own todo list items 
+# Backend
+https://github.com/FREDVUNI/node-todo-app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
