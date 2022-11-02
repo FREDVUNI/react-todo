@@ -548,6 +548,7 @@ const handleSubmit = async(e) =>{
 
 <form onSubmit={handleSubmit}>
 { error && <span>{error}</span>  }
+{ error ? <span>{error}</span>:"" }
 <input type="text" name="username" value={inputs.username} onChange={handleChange}/>
 <input type="email" name="email" value={inputs.email} onChange={handleChange}/>
 <input type="password" name="password" value={inputs.password} onChange={handleChange}/>
@@ -563,7 +564,7 @@ useEffect(()=>{
         }
         catch(error){
             console.log(error)
-            //can use toast notification
+            #can use toast notification
         }
     }
     getPosts()
