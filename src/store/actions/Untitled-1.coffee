@@ -849,6 +849,27 @@ module.exports = { logIn }
 
 <input value={todo.name} onChange={e => setTodo({...todo,name:e.target.value,date:new Date()})}/>
 
+const multer = require("multer")
+
+const storage = multer.diskStorage({
+    destination:(req,cb,file) =>{
+        cb(null,"/images/uploads")
+    }
+    filename:(req,cb,file) =>{
+        cb(null,Date.now(path.extname(file.originalname)))
+    }
+})
+
+const filter = (req,file,cb) =>{
+    if(file.mimetype==="image/jpg" || file.mimetype==="image/png"){
+        cb(null,true)
+    }else{
+        cb(null,false)
+    }
+}
+
+const upload = multer({storage,filter})
+
 #showing todo items
 import {useDispatch,useSelector} from 'react-redux'
 import {useEffect},React from 'react'
