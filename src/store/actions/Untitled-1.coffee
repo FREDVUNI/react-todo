@@ -519,6 +519,21 @@ const submitHandler = (e) =>{
 #Hollywood,the office,icarly-japan
 #cloudinary --- Freddyvuni#809
 
+
+    const splitData = name.split(/(?:[-. ])|(\d+)/).filter(Boolean)
+    console.log(splitData)
+
+
+let currentDate = new Date();
+let firstDate = currentDate.getDate() - currentDate.getDay(); 
+let lastDate = firstDate + 6;
+
+let firstDay = new Date(currentDate.setDate(firstDate));
+let lastDay = new Date(currentDate.setDate(lastDate));
+
+console.log(firstDay,lastDay)
+
+
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -570,6 +585,8 @@ useEffect(()=>{
     getPosts()
 },[])
 
+
+
 import mysql from 'mysql'
 import dotenv from 'dotenv' 
 dotenv.config({path:'.env'})
@@ -595,6 +612,7 @@ const signUp = async(req,res) =>{
         const q = "SELECT * FROM users WHERE username = ? AND email = ?"
 
         db.query(q,[req.body.username,req.body.email],(err,data)=>{
+            if(err) res.status(409).json(err)
             if(data.length) res.status(409).json('Email or username already exists.')
 
             const saltPassword = bcrypt.genSaltSync(10)
