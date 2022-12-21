@@ -1,4 +1,4 @@
-fconst express = require("express")
+const express = require("express")
 const app = express()
 const dotenv = require("dotenv")
 const morgan = require("morgan")
@@ -519,6 +519,21 @@ const submitHandler = (e) =>{
 #Hollywood,the office,icarly-japan
 #cloudinary --- Freddyvuni#809
 
+
+    const splitData = name.split(/(?:[-. ])|(\d+)/).filter(Boolean)
+    console.log(splitData)
+
+
+let currentDate = new Date();
+let firstDate = currentDate.getDate() - currentDate.getDay(); 
+let lastDate = firstDate + 6;
+
+let firstDay = new Date(currentDate.setDate(firstDate));
+let lastDay = new Date(currentDate.setDate(lastDate));
+
+console.log(firstDay,lastDay)
+
+
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -570,6 +585,8 @@ useEffect(()=>{
     getPosts()
 },[])
 
+
+
 import mysql from 'mysql'
 import dotenv from 'dotenv' 
 dotenv.config({path:'.env'})
@@ -595,6 +612,7 @@ const signUp = async(req,res) =>{
         const q = "SELECT * FROM users WHERE username = ? AND email = ?"
 
         db.query(q,[req.body.username,req.body.email],(err,data)=>{
+            if(err) res.status(409).json(err)
             if(data.length) res.status(409).json('Email or username already exists.')
 
             const saltPassword = bcrypt.genSaltSync(10)
@@ -621,7 +639,7 @@ const signUp = async(req,res) =>{
     }    
 }
 
-const signIn = aync(req,res)=>{
+const signIn = async(req,res)=>{
     try{
         const q = "SELECT * FROM users WHERE email = ?"
 
@@ -742,13 +760,15 @@ import { store } from './context/index'
 #Login component
 import { useDispatch } from 'react-redux'
 import { authActions } from './context/index'
+import { useNavigate } from 'react-router-dom'
 
 const dispatch = useDispatch()
+const navigate = useNavigate()
 const handleSubmit = async(e) =>{
     e.preventDefault()
-        await dispatch(authActions.login(inputs))
     try{
-        await
+        await dispatch(authActions.login(inputs))
+        navigate("/")
     }
     catch(error){
         console.log(error)
@@ -924,3 +944,87 @@ https://res.cloudinary.com/dvcj2fbjt/image/upload/v1658054194/cld-sample-3.jpg
 https://res.cloudinary.com/dvcj2fbjt/image/upload/v1658054193/cld-sample.jpg
 https://res.cloudinary.com/dvcj2fbjt/image/upload/v1658054195/cld-sample-4.jpg
 https://res.cloudinary.com/dvcj2fbjt/image/upload/v1658054169/sample.jpg
+
+#typeScript
+let heroes = ["thor","spiderman","ironman"]
+
+heroes.map((hero):string =>{
+    return `these ${hero}`
+})
+
+type User = {
+    name:string;
+    age:number;
+}
+
+const createUser = (user:User) =>{}
+
+createUser({name:"",age:null})
+
+const arrayPeople:string[] = ["Fred","vuni","Freed"]
+const myPeople:Array<string> = ["Fred","vuni","Freed"]
+
+const allUsers:User = []
+
+#union - combination of two or more types
+
+let houseId: number | string = 67
+
+type user = {
+    name:string,
+    age:number,
+    id:number
+}
+
+type admin = {
+    username:string,
+    id:number,
+    isAdmin:boolean
+}
+
+let getAccess: user | admin = { name:"Fred",id:45,isAdmin:true }
+
+#union arrays
+let allPeople: (number | string | boolean)[] = ["Fred",56,true]
+
+type detailsPeople = {
+    name:string;
+    age:number;
+    isAdult:true
+}
+
+let meDetails:deatilsPeople = { name:"Fred",age:56,isAdult:true }
+
+#enum - shows intent of what your data should be - it's either string or number, the variables are constants
+
+enum seatChoice {
+    AISLE,
+    MIDDLE
+}
+
+let seat = seatChoice.AISLE 
+#you get access to it here
+
+#getters and setters or mutators and accessor 
+#protect data especially private data 
+#getters get return values and are attached with return type
+#setters update or sets value no return types
+
+get allMyNames():string{
+    return 'fred vuni'
+} 
+
+set allMySchools(){
+    #set or update values here
+}
+
+const identity = <Type>(val: Type) : Type =>(
+    return val
+)
+
+const detetectType = (val: number | string) =>{
+    return val.toLowerCase()
+}
+
+detectType("FRED")
+
