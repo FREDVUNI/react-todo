@@ -68,8 +68,8 @@ module.exports = user
 #controllers--users
 const mongoose = require("mongoose")
 const jwt = require("jsonwebtoken")
-const joi - require("joi")
-const bcrypt - require("bcrypt")
+const joi = require("joi")
+const bcrypt = require("bcrypt")
 const user = require("../models/user")
 
 export const user = async (req,res)=>{
