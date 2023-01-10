@@ -942,3 +942,12 @@ https://res.cloudinary.com/dvcj2fbjt/image/upload/v1658054194/cld-sample-3.jpg
 https://res.cloudinary.com/dvcj2fbjt/image/upload/v1658054193/cld-sample.jpg
 https://res.cloudinary.com/dvcj2fbjt/image/upload/v1658054195/cld-sample-4.jpg
 https://res.cloudinary.com/dvcj2fbjt/image/upload/v1658054169/sample.jpg
+
+#typeScript
+let heroes = ["thor","spiderman","ironman"]
+
+heroes.map((hero):string =>{
+    return `these ${hero}`
+})
+
+const myNu
