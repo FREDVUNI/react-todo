@@ -1,5 +1,3 @@
-Sure! Here's a sample README file for your full-stack JavaScript app:
-
 # Full Stack Todo App
 
 This is a full-stack JavaScript application that allows users to sign up, sign in, and manage their own todo list items.
