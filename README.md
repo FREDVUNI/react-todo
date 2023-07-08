@@ -11,7 +11,7 @@ This is a full-stack JavaScript application that allows users to sign up, sign i
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript, Vue.js
+- **Frontend**: HTML, CSS, JavaScript, React Js, MUI
 - **Backend**: Node.js, Express.js, MongoDB
 - **Authentication**: JSON Web Tokens (JWT)
 - **Database**: MongoDB
@@ -59,7 +59,7 @@ Before running the application, ensure that you have the following prerequisites
 1. Clone the frontend repository from GitHub:
 
    ```shell
-   git clone https://github.com/your-username/your-frontend-repo.git
+   git clone https://github.com/FREDVUNI/react-todo.git
    ```
 
 2. Install the dependencies:
