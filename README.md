@@ -1,75 +1,110 @@
-# Full stack JavaScript todo application
-A Full stack node express react app with mongoDB that allows users to sign up, sign in and have their own todo list items 
-# Backend
-https://github.com/FREDVUNI/node-todo-app
+Sure! Here's a sample README file for your full-stack JavaScript app:
 
-# Getting Started with Create React App
+# Full Stack Todo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack JavaScript application that allows users to sign up, sign in, and manage their own todo list items.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User Registration: Users can sign up with their email address and password to create an account.
+- User Authentication: Users can sign in with their credentials to access their todo list.
+- Todo List: Users can create, view, update, and delete their todo list items.
+- User Authorization: Only authenticated users can access their own todo list items.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: HTML, CSS, JavaScript, Vue.js
+- **Backend**: Node.js, Express.js, MongoDB
+- **Authentication**: JSON Web Tokens (JWT)
+- **Database**: MongoDB
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+Before running the application, ensure that you have the following prerequisites installed:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js: [https://nodejs.org](https://nodejs.org)
+- MongoDB: [https://www.mongodb.com](https://www.mongodb.com)
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the backend repository from GitHub:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```shell
+   git clone https://github.com/FREDVUNI/node-todo-app.git
+   ```
 
-### `npm run eject`
+2. Install the dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```shell
+   cd node-todo-app
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Configure the environment variables:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   - Create a `.env` file in the root directory of the backend project.
+   - Copy the contents of `.env.example` into `.env`.
+   - Update the environment variables with your own values, such as the MongoDB connection URL and JWT secret.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Start the backend server:
 
-## Learn More
+   ```shell
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   The server will start running at `http://localhost:5000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Frontend Setup
 
-### Code Splitting
+1. Clone the frontend repository from GitHub:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```shell
+   git clone https://github.com/your-username/your-frontend-repo.git
+   ```
 
-### Analyzing the Bundle Size
+2. Install the dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```shell
+   cd your-frontend-repo
+   npm install
+   ```
 
-### Making a Progressive Web App
+3. Update the API endpoint:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   - Open the frontend project in your favorite code editor.
+   - Locate the API endpoint configuration file (e.g., `src/api/config.js`).
+   - Update the `API_URL` variable to `http://localhost:5000` (or the appropriate backend URL if different).
 
-### Advanced Configuration
+4. Start the frontend development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```shell
+   npm run serve
+   ```
 
-### Deployment
+   The frontend will be accessible at `http://localhost:8080` (or a different port if specified).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Usage
 
-### `npm run build` fails to minify
+1. Open the application in your web browser.
+2. Sign up with your email address and password to create an account.
+3. Sign in with your credentials to access your todo list.
+4. Create new todo items, mark them as completed, update their details, or delete them as needed.
+5. Sign out to securely log out of your account.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Submit a pull request with a detailed description of your changes.
+
+
+
+## Contact
+
+For any inquiries or feedback, please contact [fredvuni809@gmail.com].
